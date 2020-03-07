@@ -51,24 +51,3 @@ $conpay-app-accent: mat-palette($md-conpay, A200, A100, A400);
 $conpay-app-warn: mat-palette($mat-red);
 $conpay-app-theme: mat-light-theme($conpay-app-primary, $conpay-app-accent, $conpay-app-warn);
 @include angular-material-theme($conpay-app-theme);
-
-$dark-primary: mat-palette($mat-blue-grey);
-$dark-accent: mat-palette($mat-amber, A200, A100, A400);
-$dark-warn: mat-palette($mat-deep-orange);
-$dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-
-$candy-app-primary: mat-palette($mat-indigo);
-$candy-app-accent: mat-palette($mat-pink, A200, A100, A400);
-$candy-app-warn: mat-palette($mat-red);
-$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
-
-.localhost {
-  @include angular-material-theme($dark-theme);
-}
-
-.github {
-  @include angular-material-theme($candy-app-theme);
-}
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
