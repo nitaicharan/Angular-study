@@ -16,27 +16,43 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    const theme = this.choiceTheme();
+
     const head = this.document.getElementsByTagName('head')[0];
-    const themeLink = this.document.getElementById('hostname-theme') as HTMLLinkElement;
-    if (themeLink) {
-      themeLink.href = `${this.choiceTheme()}`;
-    } else {
-      const style = this.document.createElement('link');
-      style.id = 'hostname-theme';
-      style.rel = 'stylesheet';
-      style.href = `${this.choiceTheme()}`;
-      head.appendChild(style);
-    }
+    const styleLink = this.document.createElement('link');
+    styleLink.setAttribute('id', 'hostname');
+    styleLink.setAttribute('rel', 'stylesheet');
+    styleLink.setAttribute('href', theme.stylesFile);
+    head.appendChild(styleLink);
+
+
+    const faviconLink = this.document.getElementById('favicon') as HTMLLinkElement;
+    faviconLink.setAttribute('href', theme.faviconPath);
+
+    const themeLink = this.document.getElementById('logo') as HTMLLinkElement;
+    themeLink.setAttribute('src', theme.logoPath);
   }
 
-  private choiceTheme(): string {
-    let theme: string;
+  private choiceTheme(): { stylesFile: string, faviconPath: string, logoPath: string } {
     const hostname: string = this.windowService.getHostname();
     if (hostname.match('localhost')) {
-      theme = 'localhost-styles.css';
+      return {
+        stylesFile: 'localhost-styles.css',
+        faviconPath: 'assets/img/localhost/favicon.ico',
+        logoPath: 'assets/img/localhost/logo.jpg'
+      };
     } else if (hostname.match('127.0.0.1')) {
-      theme = 'loopback-styles.css';
+      return {
+        stylesFile: 'loopback-styles.css',
+        faviconPath: 'assets/img/loopback/favicon.ico',
+        logoPath: 'assets/img/loopback/logo.jpg'
+      };
+    } else {
+      return {
+        stylesFile: 'styles.css',
+        faviconPath: 'assets/img/default/favicon.ico',
+        logoPath: 'assets/img/default/logo.jpg'
+      };
     }
-    return theme;
   }
 }
