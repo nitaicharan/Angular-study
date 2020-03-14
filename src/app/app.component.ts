@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { WindowService } from './window.service';
 import { DOCUMENT } from '@angular/common';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +13,12 @@ export class AppComponent implements OnInit {
 
   constructor(
     private windowService: WindowService,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
+    private titleService: Title,
   ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Teste para serviço de titulo!');
     const theme = this.choiceTheme();
 
     const head = this.document.getElementsByTagName('head')[0];
