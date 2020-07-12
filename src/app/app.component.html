@@ -1,1 +1,6 @@
-<app-nav></app-nav>
+<button routerLink="/one">One</button>
+<button routerLink="/two">Two</button>
+<router-outlet></router-outlet>
+<button [routerLink]="[{ outlets: { colors: 'colors/black' } }]">Black</button>
+<button [routerLink]="[{ outlets: { colors: 'colors/white' } }]">White</button>
+<router-outlet name="colors"></router-outlet>
