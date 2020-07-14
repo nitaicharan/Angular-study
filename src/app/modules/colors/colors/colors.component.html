@@ -1,0 +1,9 @@
+<button [routerLink]="[{ outlets: { cl: 'black' } }]">Black</button>
+<button [routerLink]="[{ outlets: { cl: 'white' } }]">White</button>
+
+<button [routerLink]="[{ outlets: { cl1: 'orange' } }]">Orange</button>
+<button [routerLink]="[{ outlets: { cl1: 'red' } }]">Red</button>
+
+<br><br>
+<router-outlet name="cl"></router-outlet>
+<router-outlet name="cl1"></router-outlet>

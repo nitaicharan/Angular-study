@@ -7,7 +7,7 @@ import { TwoComponent } from './two/two.component';
 const routes: Routes = [
   { path: 'one', component: OneComponent },
   { path: 'two', component: TwoComponent },
-  { path: 'colors', outlet: 'colors', loadChildren: () => import('./modules/colors/colors.module').then(m => m.ColorsModule) },
+  { path: '', loadChildren: () => import('./modules/colors/colors.module').then(m => m.ColorsModule) },
 ];
 
 @NgModule({
