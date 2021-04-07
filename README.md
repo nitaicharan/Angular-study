@@ -1,4 +1,3 @@
-## Angular-study
 <!-- PROJECT SHIELDS -->
 ![Angular][angular-shield]
 ![TypeScript][typescript-shield]
@@ -8,10 +7,10 @@
 
 Project available to access at: https://nitaicharan.github.io/Angular-study/
 
-<!--[![](Angular-study.png)](https://nitaicharan.github.io/Angular-study/)-->
+<!--[![](PREVIEW.svg)](https://nitaicharan.github.io/Angular-study/)-->
 <a href="https://nitaicharan.github.io/Angular-study">
   <p align="center">
-    <img src="PREVIEW.png">
+    <img src="PREVIEW.svg">
   </p>
 </a>
 
@@ -31,16 +30,16 @@ Project available to access at: https://nitaicharan.github.io/Angular-study/
 ng build --prod --base-href=/Angular-study/
 
 git add -A
-git commit -m <titule> <message>
+git commit -m <title> <message>
 git push origin <branch>
-git subtree push --prefix dist/study origin gh-pages
-git push origin `git subtree split --prefix dist/study master`:gh-pages --force
+git subtree push --prefix dist/angularstudy origin gh-pages
+git push origin `git subtree split --prefix dist/angularstudy master`:gh-pages --force
 ```
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-<!-- ALIES README -->
+<!-- ALIAS README -->
 [course-url]: https://udemy.com/course/flutter-bootcamp-with-dart/
 [instructor-url]: https://udemy.com/user/4b4368a3-b5c8-4529-aa65-2056ec31f37e/
 [certificate-url]: https://ude.my/UC-9063G6AV
